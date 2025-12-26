@@ -334,16 +334,17 @@ section p {
   color: var(--primary-light);
 }
 
-/* ===================================================
-   COMPÉTENCES — GRID 2x2 + COUNTER + HOVER 3D
-=================================================== */
+/* --- Variables, reset, navbar, hero, sections, projets ... comme avant --- */
+
+/* COMPÉTENCES */
 .competence-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 35px;
   max-width: 700px;
   margin: auto;
   perspective: 800px;
+  transform-style: preserve-3d;
 }
 
 .competence {
@@ -382,6 +383,13 @@ section p {
   font-weight: 600;
 }
 
+/* Dark mode pour cartes, compétences et form */
+body.dark-mode .competence,
+body.dark-mode .carte-projet,
+body.dark-mode form {
+  background: rgba(30,30,30,0.2);
+  border-color: rgba(255,255,255,0.15);
+}
 /* ===================================================
    FORMULAIRE — GLASS
 =================================================== */
