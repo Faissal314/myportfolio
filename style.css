@@ -1,98 +1,96 @@
-/* =====================================================
-   VARIABLES – LIGHT MODE
-===================================================== */
+/* ===================================================
+   VARIABLES GLOBALES — IDENTITÉ + GLASSMORPHISM
+=================================================== */
 :root {
   --primary: #4a148c;
   --primary-light: #7b1fa2;
   --primary-soft: #e1bee7;
 
-  --bg-main: #f6f3fb;
-  --bg-section: #ffffff;
-
   --text-main: #2e2e2e;
   --text-soft: #666;
+  --bg-light: linear-gradient(135deg, #ede7f6, #f6f3fb, #ede7f6);
+  --bg-dark: #1a1a1a;
 
-  --shadow-soft: 0 8px 22px rgba(0,0,0,0.1);
-  --shadow-strong: 0 18px 45px rgba(0,0,0,0.18);
+  /* Glass */
+  --glass-bg: rgba(255, 255, 255, 0.18);
+  --glass-border: rgba(255, 255, 255, 0.35);
+  --glass-shadow: 0 10px 35px rgba(31, 38, 135, 0.25);
+  --glass-blur: blur(16px);
 
-  --radius: 16px;
+  --radius: 18px;
   --transition: all 0.35s ease;
 }
 
-/* =====================================================
-   DARK MODE
-===================================================== */
-body.dark {
-  --bg-main: #0f0c16;
-  --bg-section: #1a1625;
-  --text-main: #f1f1f1;
-  --text-soft: #b0b0b0;
-  --shadow-soft: 0 10px 30px rgba(0,0,0,0.6);
-  --shadow-strong: 0 25px 60px rgba(0,0,0,0.8);
-}
-
-/* Auto dark selon OS */
-@media (prefers-color-scheme: dark) {
-  body:not(.light) {
-    background: var(--bg-main);
-  }
-}
-
-/* =====================================================
-   RESET
-===================================================== */
+/* ===================================================
+   RESET & BASE
+=================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   font-family: "Segoe UI", sans-serif;
-  background: var(--bg-main);
+  background: var(--bg-light);
   color: var(--text-main);
   line-height: 1.75;
   padding-top: 70px;
+  overflow-x: hidden;
   transition: background 0.4s, color 0.4s;
 }
 
-a, button {
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+body.dark-mode {
+  background: var(--bg-dark);
+  color: #e0e0e0;
 }
 
-/* =====================================================
-   NAVBAR
-===================================================== */
+/* ===================================================
+   NAVBAR — GLASS
+=================================================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
-  background: linear-gradient(135deg, var(--primary), #6a1b9a);
+  background: rgba(74, 20, 140, 0.55);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
   z-index: 1000;
-  box-shadow: var(--shadow-soft);
 }
 
 .nav-container {
   max-width: 1150px;
   margin: auto;
-  padding: 16px 24px;
+  padding: 16px 28px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-logo {
-  color: #fff;
-  font-size: 1.4em;
+  color: white;
   font-weight: 800;
+  font-size: 1.5em;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 26px;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav-links li button {
+  border: none;
+  background: none;
+  color: white;
+  font-size: 1.2em;
+  cursor: pointer;
 }
 
 .nav-links a {
@@ -100,46 +98,69 @@ a, button {
   text-decoration: none;
   font-weight: 600;
   position: relative;
+  transition: var(--transition);
 }
 
-/* =====================================================
-   HERO
-===================================================== */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background: var(--primary-soft);
+  transition: width 0.3s;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  color: white;
+  font-size: 1.8em;
+  cursor: pointer;
+}
+
+/* ===================================================
+   HERO / ACCUEIL
+=================================================== */
 #accueil {
   background: linear-gradient(135deg, var(--primary), #6a1b9a);
   color: white;
-  padding: 100px 20px 160px;
+  padding: 100px 20px 170px;
   text-align: center;
   position: relative;
 }
 
 .accueil-container h1 {
-  font-size: 2.7em;
+  font-size: 2.9em;
   font-weight: 900;
 }
 
 .subtitle {
-  margin-top: 12px;
-  font-size: 1.2em;
+  margin-top: 14px;
+  font-size: 1.25em;
   color: #e0d6f0;
 }
 
-/* HERO BUTTONS */
 .hero-buttons {
-  margin-top: 42px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 22px;
-  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.hero-buttons a {
-  min-width: 220px;
-  padding: 14px 36px;
-  border-radius: 999px;
+.btn-primary,
+.btn-secondary,
+button {
+  padding: 14px 34px;
+  border-radius: 30px;
   font-weight: 700;
-  text-align: center;
-  box-shadow: 0 14px 35px rgba(0,0,0,0.25);
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
 .btn-primary {
@@ -147,16 +168,22 @@ a, button {
   color: var(--primary);
 }
 
+.btn-primary:hover {
+  background: var(--primary-soft);
+  color: white;
+}
+
 .btn-secondary {
   border: 2px solid white;
   color: white;
 }
 
-.hero-buttons a:hover {
-  transform: translateY(-3px);
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary);
 }
 
-/* PHOTO */
+/* Photo */
 .photo-wrapper {
   position: absolute;
   bottom: -85px;
@@ -165,28 +192,45 @@ a, button {
 }
 
 .photo-profil {
-  width: 160px;
-  height: 160px;
+  width: 175px;
+  height: 175px;
   border-radius: 50%;
   border: 6px solid white;
   object-fit: cover;
-  box-shadow: var(--shadow-strong);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 }
 
-/* =====================================================
-   SECTIONS
-===================================================== */
+/* ===================================================
+   SECTIONS — CONTENEUR GLASS
+=================================================== */
 section {
   max-width: 1150px;
   margin: auto;
-  padding: 140px 20px 80px;
+  padding: 150px 25px 90px;
+  position: relative;
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  z-index: -1;
+  border-radius: 30px;
 }
 
 section h2 {
   text-align: center;
-  font-size: 2.2em;
+  font-size: 2.3em;
   margin-bottom: 35px;
   color: var(--primary);
+}
+
+section h3 {
+  text-align: center;
+  margin: 45px 0 25px;
+  color: var(--primary-light);
 }
 
 section p {
@@ -196,130 +240,198 @@ section p {
   color: var(--text-soft);
 }
 
-/* =====================================================
-   FILTRES PROJETS
-===================================================== */
+/* ===================================================
+   PROJETS — GLASS CARDS & HOVER 3D
+=================================================== */
 .projet-filters {
   display: flex;
   justify-content: center;
-  gap: 16px;
-  margin-bottom: 45px;
-  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 30px;
 }
 
 .filter-btn {
-  padding: 10px 26px;
-  border-radius: 999px;
-  border: 2px solid var(--primary-light);
-  background: rgba(255,255,255,0.7);
+  padding: 10px 22px;
+  border-radius: 25px;
+  border: 1px solid var(--primary-light);
+  background: rgba(255,255,255,0.15);
   color: var(--primary-light);
-  font-weight: 700;
-  font-size: 0.85em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
 }
 
-.filter-btn:hover,
-.filter-btn.active {
+.filter-btn.active,
+.filter-btn:hover {
   background: var(--primary-light);
   color: white;
-  box-shadow: 0 10px 30px rgba(123,31,162,0.4);
-  transform: translateY(-2px);
 }
 
-/* =====================================================
-   CARTES PROJETS – HOVER 3D
-===================================================== */
 .projet-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
+  max-width: 1050px;
+  margin: auto;
+  perspective: 1200px;
 }
 
 .carte-projet {
-  background: var(--bg-section);
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   overflow: hidden;
-  transform-style: preserve-3d;
-  perspective: 1000px;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .carte-projet:hover {
-  transform: rotateX(6deg) rotateY(-6deg) translateY(-8px);
-  box-shadow: var(--shadow-strong);
+  transform: rotateY(8deg) rotateX(5deg) translateY(-12px);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
 }
 
-/* =====================================================
-   COMPÉTENCES – 2x2 + COMPTEUR
-===================================================== */
+.carte-projet img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.projet-content {
+  padding: 26px;
+  text-align: center;
+}
+
+.tech {
+  margin: 16px 0;
+  font-weight: 700;
+  color: var(--primary-light);
+}
+
+.projet-links {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+}
+
+.projet-links a {
+  padding: 8px 22px;
+  border-radius: 22px;
+  font-size: 0.85em;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.demo {
+  background: var(--primary-light);
+  color: white;
+}
+
+.github {
+  border: 2px solid var(--primary-light);
+  color: var(--primary-light);
+}
+
+/* ===================================================
+   COMPÉTENCES — GRID 2x2 + COUNTER + HOVER 3D
+=================================================== */
 .competence-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: 28px;
-  max-width: 720px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px;
+  max-width: 700px;
   margin: auto;
+  perspective: 800px;
 }
 
 .competence {
-  background: var(--bg-section);
-  padding: 26px;
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  -webkit-backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
+  padding: 26px;
   text-align: center;
-  box-shadow: var(--shadow-soft);
-  transform-style: preserve-3d;
+  box-shadow: var(--glass-shadow);
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
 }
 
 .competence:hover {
-  transform: rotateX(6deg) rotateY(6deg) translateY(-6px);
+  transform: rotateY(6deg) rotateX(4deg) translateY(-10px);
 }
 
 .competence img {
-  width: 70px;
+  width: 80px;
   margin-bottom: 14px;
 }
 
-/* COMPTEUR */
-.competence .counter {
-  font-size: 1.6em;
-  font-weight: 800;
-  color: var(--primary-light);
-  margin-top: 8px;
+.competence span {
+  font-weight: 700;
+  display: block;
+  font-size: 1.2em;
 }
 
-/* =====================================================
-   FORM
-===================================================== */
+.competence p {
+  margin-top: 6px;
+  font-weight: 600;
+}
+
+/* ===================================================
+   FORMULAIRE — GLASS
+=================================================== */
 form {
-  max-width: 520px;
+  max-width: 540px;
   margin: auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: var(--radius);
+  padding: 40px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
   display: flex;
   flex-direction: column;
   gap: 18px;
 }
 
-input, textarea {
+input,
+textarea {
   padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #aaa;
+  border-radius: 10px;
+  border: 1px solid #bbb;
+  font-size: 1em;
+  transition: var(--transition);
 }
 
-/* =====================================================
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 8px rgba(123, 31, 162, 0.35);
+}
+
+/* ===================================================
    FOOTER
-===================================================== */
+=================================================== */
 footer {
-  background: linear-gradient(135deg, #3a0f6a, var(--primary));
+  background: rgba(74, 20, 140, 0.65);
+  backdrop-filter: blur(14px);
   color: white;
   text-align: center;
   padding: 26px;
+  font-size: 0.9em;
 }
 
-/* =====================================================
-   ANIMATIONS
-===================================================== */
+/* ===================================================
+   ANIMATIONS & FADE-IN
+=================================================== */
 .fade-section,
 .fade-item {
   opacity: 0;
   transform: translateY(30px);
-  transition: 0.9s ease;
+  transition: all 0.9s ease;
 }
 
 .fade-section.visible,
@@ -328,13 +440,44 @@ footer {
   transform: translateY(0);
 }
 
-/* =====================================================
+/* ===================================================
    RESPONSIVE
-===================================================== */
-@media (max-width: 768px) {
-  .projet-grid { grid-template-columns: 1fr; }
+=================================================== */
+@media (max-width: 992px) {
+  .projet-grid,
+  .competence-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
-@media (max-width: 420px) {
-  .competence-grid { grid-template-columns: 1fr; }
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(74, 20, 140, 0.85);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+    border-radius: 0 0 0 20px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .projet-filters {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

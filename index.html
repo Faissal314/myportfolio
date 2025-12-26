@@ -8,7 +8,6 @@
 </head>
 <body>
 
-
 <nav class="navbar">
   <div class="nav-container">
     <div class="nav-logo">Faissal.dev</div>
@@ -20,10 +19,10 @@
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#cv">CV</a></li>
       <li><a href="#contact">Contact</a></li>
+      <li><button id="dark-toggle">🌙</button></li>
     </ul>
   </div>
 </nav>
-
 
 <header id="accueil">
   <div class="accueil-container fade-section">
@@ -43,7 +42,6 @@
   </div>
 </header>
 
-
 <section id="apropos" class="fade-section">
   <h2>À propos</h2>
   <p>
@@ -61,11 +59,9 @@
   </p>
 </section>
 
-
 <section id="projets" class="fade-section">
   <h2>Mes projets</h2>
 
-  
   <div class="projet-filters">
     <button class="filter-btn active" data-filter="all">Tous</button>
     <button class="filter-btn" data-filter="web">Web</button>
@@ -74,8 +70,6 @@
   </div>
 
   <div class="projet-grid">
-
-    
     <div class="carte-projet fade-item" data-category="web">
       <img src="images/immob.PNG" alt="Gestion immobilière">
       <div class="projet-content">
@@ -92,7 +86,6 @@
       </div>
     </div>
 
-    
     <div class="carte-projet fade-item" data-category="web">
       <img src="images/newdawn.PNG" alt="Gestion association">
       <div class="projet-content">
@@ -109,7 +102,6 @@
       </div>
     </div>
 
-    
     <div class="carte-projet fade-item" data-category="web">
       <img src="images/projet-portfolio.jpg" alt="Portfolio personnel">
       <div class="projet-content">
@@ -126,7 +118,6 @@
       </div>
     </div>
 
-    
     <div class="carte-projet fade-item" data-category="mobile">
       <img src="images/serviceapp.jpeg" alt="Services App">
       <div class="projet-content">
@@ -143,7 +134,6 @@
       </div>
     </div>
 
-    
     <div class="carte-projet fade-item" data-category="mobile">
       <img src="images/sangoapp.jpeg" alt="SangoApp">
       <div class="projet-content">
@@ -159,7 +149,6 @@
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
@@ -168,31 +157,30 @@
 
   <h3>Développement</h3>
   <div class="competence-grid">
-    <div class="competence"><img src="images/html.jpg"><span>HTML5</span></div>
-    <div class="competence"><img src="images/css.jpg"><span>CSS3</span></div>
-    <div class="competence"><img src="images/javascript.jpg"><span>JavaScript</span></div>
-    <div class="competence"><img src="images/php.jpg"><span>PHP</span></div>
-    <div class="competence"><img src="images/MySql.jpg"><span>MySQL</span></div>
-    <div class="competence"><img src="images/github.jpg"><span>Git/GitHub</span></div>
-    <div class="competence"><img src="images/react.jpg"><span>React</span></div>
-    <div class="competence"><img src="images/node.jpg"><span>Node.js</span></div>
-    <div class="competence"><img src="images/python.jpg"><span>Python</span></div>
-    <div class="competence"><img src="images/tailwind.jpg"><span>Tailwind</span></div>
+    <div class="competence"><img src="images/html.jpg"><span class="counter" data-target="95">0%</span><p>HTML5</p></div>
+    <div class="competence"><img src="images/css.jpg"><span class="counter" data-target="90">0%</span><p>CSS3</p></div>
+    <div class="competence"><img src="images/javascript.jpg"><span class="counter" data-target="85">0%</span><p>JavaScript</p></div>
+    <div class="competence"><img src="images/php.jpg"><span class="counter" data-target="75">0%</span><p>PHP</p></div>
+    <div class="competence"><img src="images/MySql.jpg"><span class="counter" data-target="80">0%</span><p>MySQL</p></div>
+    <div class="competence"><img src="images/github.jpg"><span class="counter" data-target="85">0%</span><p>Git/GitHub</p></div>
+    <div class="competence"><img src="images/react.jpg"><span class="counter" data-target="70">0%</span><p>React</p></div>
+    <div class="competence"><img src="images/node.jpg"><span class="counter" data-target="65">0%</span><p>Node.js</p></div>
+    <div class="competence"><img src="images/python.jpg"><span class="counter" data-target="60">0%</span><p>Python</p></div>
+    <div class="competence"><img src="images/tailwind.jpg"><span class="counter" data-target="75">0%</span><p>Tailwind</p></div>
   </div>
 
   <h3>Infographie & Montage vidéo</h3>
   <div class="competence-grid">
-    <div class="competence"><img src="images/photoshop.jfif"><span>Photoshop</span></div>
-    <div class="competence"><img src="images/illustrator.png"><span>Illustrator</span></div>
-    <div class="competence"><img src="images/premiere.jfif"><span>Premiere Pro</span></div>
-    <div class="competence"><img src="images/aftereffect.png"><span>After Effects</span></div>
-    <div class="competence"><img src="images/figma.png"><span>Figma</span></div>
-    <div class="competence"><img src="images/canva.jfif"><span>Canva</span></div>
-    <div class="competence"><img src="images/indesign.jfif"><span>InDesign</span></div>
-    <div class="competence"><img src="images/capcut.jfif"><span>Capcut</span></div>
+    <div class="competence"><img src="images/photoshop.jfif"><span class="counter" data-target="85">0%</span><p>Photoshop</p></div>
+    <div class="competence"><img src="images/illustrator.png"><span class="counter" data-target="80">0%</span><p>Illustrator</p></div>
+    <div class="competence"><img src="images/premiere.jfif"><span class="counter" data-target="80">0%</span><p>Premiere Pro</p></div>
+    <div class="competence"><img src="images/aftereffect.png"><span class="counter" data-target="75">0%</span><p>After Effects</p></div>
+    <div class="competence"><img src="images/figma.png"><span class="counter" data-target="80">0%</span><p>Figma</p></div>
+    <div class="competence"><img src="images/canva.jfif"><span class="counter" data-target="85">0%</span><p>Canva</p></div>
+    <div class="competence"><img src="images/indesign.jfif"><span class="counter" data-target="70">0%</span><p>InDesign</p></div>
+    <div class="competence"><img src="images/capcut.jfif"><span class="counter" data-target="75">0%</span><p>Capcut</p></div>
   </div>
 </section>
-
 
 <section id="cv" class="fade-section">
   <h2>Mon CV</h2>
@@ -200,7 +188,6 @@
     Télécharger mon CV
   </a>
 </section>
-
 
 <section id="contact" class="fade-section">
   <h2>Contact</h2>
@@ -217,5 +204,76 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // ===================================================
+  // Menu Toggle
+  // ===================================================
+  const toggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // ===================================================
+  // Dark / Light Toggle
+  // ===================================================
+  const darkToggle = document.getElementById("dark-toggle");
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    darkToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
+
+  // ===================================================
+  // Fade in sections
+  // ===================================================
+  const elements = document.querySelectorAll(".fade-section, .fade-item");
+  const observer = new IntersectionObserver(
+    entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  elements.forEach(el => observer.observe(el));
+
+  // ===================================================
+  // Filter projects
+  // ===================================================
+  const filterButtons = document.querySelectorAll(".filter-btn");
+  const projects = document.querySelectorAll(".carte-projet");
+  filterButtons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      filterButtons.forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      const filter = btn.dataset.filter;
+      projects.forEach(project => {
+        project.style.display = filter === "all" || project.dataset.category === filter ? "block" : "none";
+      });
+    });
+  });
+
+  // ===================================================
+  // Animated counters
+  // ===================================================
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.dataset.target;
+      const count = +counter.innerText.replace('%','');
+      const increment = target / 100;
+      if (count < target) {
+        counter.innerText = `${Math.ceil(count + increment)}%`;
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = `${target}%`;
+      }
+    };
+    updateCounter();
+  });
+</script>
 </body>
 </html>
