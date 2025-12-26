@@ -364,7 +364,11 @@ section p {
 
 .competence img {
   width: 80px;
-  margin-bottom: 14px;
+  height: 80px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 14px auto;
+  z-index: 1;
 }
 
 .competence span {
