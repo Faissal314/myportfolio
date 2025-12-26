@@ -1,60 +1,66 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const toggle = document.getElementById("menu-toggle");
+const toggle = document.getElementById("menu-toggle");
   const navLinks = document.getElementById("nav-links");
-  const navItems = document.querySelectorAll(".nav-links a");
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
 
-  if (toggle && navLinks) {
-    toggle.addEventListener("click", () => {
-      navLinks.classList.toggle("active");
-      toggle.classList.toggle("open");
-    });
+  // ===================================================
+  // Dark / Light Toggle
+  // ===================================================
+  const darkToggle = document.getElementById("dark-toggle");
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    darkToggle.textContent = document.body.classList.contains("dark-mode") ? "☀️" : "🌙";
+  });
 
-    navItems.forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("active");
-        toggle.classList.remove("open");
-      });
-    });
-  }
+  // ===================================================
+  // Fade in sections
+  // ===================================================
   const elements = document.querySelectorAll(".fade-section, .fade-item");
-
   const observer = new IntersectionObserver(
     entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add("visible");
-          observer.unobserve(entry.target); 
+          observer.unobserve(entry.target);
         }
       });
     },
-    {
-      threshold: 0.2,
-      rootMargin: "0px 0px -50px 0px"
-    }
+    { threshold: 0.15 }
   );
-
   elements.forEach(el => observer.observe(el));
+
+  // ===================================================
+  // Filter projects
+  // ===================================================
   const filterButtons = document.querySelectorAll(".filter-btn");
   const projects = document.querySelectorAll(".carte-projet");
-
   filterButtons.forEach(btn => {
     btn.addEventListener("click", () => {
       filterButtons.forEach(b => b.classList.remove("active"));
       btn.classList.add("active");
-
       const filter = btn.dataset.filter;
-
       projects.forEach(project => {
-        const category = project.dataset.category;
-
-        if (filter === "all" || category === filter) {
-          project.style.display = "block";
-          project.classList.remove("hidden");
-        } else {
-          project.style.display = "none";
-          project.classList.add("hidden");
-        }
+        project.style.display = filter === "all" || project.dataset.category === filter ? "block" : "none";
       });
     });
   });
-});
+
+  // ===================================================
+  // Animated counters
+  // ===================================================
+  const counters = document.querySelectorAll('.counter');
+  counters.forEach(counter => {
+    const updateCounter = () => {
+      const target = +counter.dataset.target;
+      const count = +counter.innerText.replace('%','');
+      const increment = target / 100;
+      if (count < target) {
+        counter.innerText = `${Math.ceil(count + increment)}%`;
+        setTimeout(updateCounter, 20);
+      } else {
+        counter.innerText = `${target}%`;
+      }
+    };
+    updateCounter();
+  });
