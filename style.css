@@ -189,6 +189,7 @@ button {
   bottom: -85px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 2;
 }
 
 .photo-profil {
@@ -198,18 +199,27 @@ button {
   border: 6px solid white;
   object-fit: cover;
   box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  /* Suppression du flou sur la moitié inférieure */
+  filter: none;
 }
 
 /* ===================================================
-   SECTIONS — CONTENEUR GLASS (SAFE)
+   SECTIONS — CONTENEUR GLASS
 =================================================== */
 section {
   max-width: 1150px;
   margin: auto;
   padding: 150px 25px 90px;
   position: relative;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(10px);
+}
+
+section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  z-index: -1;
   border-radius: 30px;
 }
 
@@ -239,6 +249,7 @@ section p {
 .projet-filters {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 15px;
   margin-bottom: 30px;
 }
@@ -332,8 +343,8 @@ section p {
 =================================================== */
 .competence-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 25px;
   max-width: 700px;
   margin: auto;
 }
