@@ -1,207 +1,324 @@
 <!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8" />
-  <title>DERME Faissal | Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>DERME Faissal | Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-container">
+        <div class="nav-logo">Faissal.dev</div>
 
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">Faissal.dev</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><button id="dark-toggle"></button></li>
-    </ul>
-  </div>
-</nav>
+        <!-- Bouton menu mobile -->
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          aria-label="Ouvrir le menu"
+          aria-expanded="false"
+          aria-controls="nav-links"
+        >
+          &#9776;
+        </button>
 
-<header id="accueil">
-  <div class="accueil-container fade-section">
-    <h1>DERME Faissal</h1>
-    <p class="subtitle">
-      Développeur Web Junior • Infographe • Monteur Vidéo
-    </p>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#apropos">À propos</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#cv">CV</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li>
+            <!-- Bouton dark mode avec icône par défaut -->
+            <button id="dark-toggle" aria-label="Basculer le thème">🌙</button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-    <div class="hero-buttons">
-      <a href="#projets" class="btn-primary">Voir mes projets</a>
-      <a href="#contact" class="btn-secondary">Me contacter</a>
-    </div>
-  </div>
-
-  <div class="photo-wrapper">
-    <img src="images/profil.jpg" class="photo-profil" alt="Photo profil">
-  </div>
-</header>
-
-<section id="apropos" class="fade-section">
-  <h2>À propos</h2>
-  <p>
-    Je suis <strong>DERME Faissal</strong>, étudiant en 3ᵉ année d'informatique
-    (Génie Logiciel), passionné par le développement web, l’infographie
-    et le montage vidéo.
-  </p>
-  <p>
-    Je conçois des applications web modernes et des visuels attractifs
-    pour le web et les réseaux sociaux.
-  </p>
-  <p>
-    Objectif : devenir un <strong>développeur full-stack polyvalent</strong>
-    capable d’allier technique, design et créativité.
-  </p>
-</section>
-
-<section id="projets" class="fade-section">
-  <h2>Mes projets</h2>
-
-  <div class="projet-filters">
-    <button class="filter-btn active" data-filter="all">Tous</button>
-    <button class="filter-btn" data-filter="web">Web</button>
-    <button class="filter-btn" data-filter="mobile">Mobile</button>
-    <button class="filter-btn" data-filter="design">Design</button>
-  </div>
-
-  <div class="projet-grid">
-    <div class="carte-projet fade-item" data-category="web">
-      <img src="images/immob.PNG" alt="Gestion immobilière">
-      <div class="projet-content">
-        <h3>Gestion immobilière</h3>
-        <p>
-          Application web permettant la gestion des biens,
-          des clients et des transactions.
+    <header id="accueil">
+      <div class="accueil-container fade-section">
+        <h1>DERME Faissal</h1>
+        <p class="subtitle">
+          Développeur Web Junior • Infographe • Monteur Vidéo
         </p>
-        <p class="tech">HTML • CSS • JavaScript • PHP • MySQL</p>
-        <div class="projet-links">
-          <a href="https://faissal.epizy.com" target="_blank" class="demo">Demo</a>
-          <a href="#" class="github">GitHub</a>
+
+        <div class="hero-buttons">
+          <a href="#projets" class="btn-primary">Voir mes projets</a>
+          <a href="#contact" class="btn-secondary">Me contacter</a>
         </div>
       </div>
-    </div>
 
-    <div class="carte-projet fade-item" data-category="web">
-      <img src="images/newdawn.PNG" alt="Gestion association">
-      <div class="projet-content">
-        <h3>Gestion d'association</h3>
-        <p>
-          Plateforme de gestion des membres, cotisations
-          et événements.
-        </p>
-        <p class="tech">PHP • MySQL • Bootstrap</p>
-        <div class="projet-links">
-          <a href="https://faissal2.epizy.com" target="_blank" class="demo">Demo</a>
-          <a href="#" class="github">GitHub</a>
-        </div>
+      <div class="photo-wrapper">
+        <img
+          src="images/profil.jpg"
+          class="photo-profil"
+          alt="Photo de profil de DERME Faissal"
+        />
       </div>
-    </div>
+    </header>
 
-    <div class="carte-projet fade-item" data-category="web">
-      <img src="images/projet-portfolio.jpg" alt="Portfolio personnel">
-      <div class="projet-content">
-        <h3>Portfolio personnel</h3>
+    <main>
+      <section id="apropos" class="fade-section">
+        <h2>À propos</h2>
         <p>
-          Site portfolio pour présenter mes compétences
-          et projets.
+          Je suis <strong>DERME Faissal</strong>, étudiant en 3ᵉ année
+          d'informatique (Génie Logiciel), passionné par le développement web,
+          l’infographie et le montage vidéo.
         </p>
-        <p class="tech">HTML • CSS • JavaScript</p>
-        <div class="projet-links">
-          <a href="index.html" target="_blank" class="demo">Demo</a>
-          <a href="#" class="github">GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="carte-projet fade-item" data-category="mobile">
-      <img src="images/serviceapp.jpeg" alt="Services App">
-      <div class="projet-content">
-        <h3>Services App</h3>
         <p>
-          Application de services à la demande
-          (mise en relation, paiement, immobilier).
+          Je conçois des applications web modernes et des visuels attractifs
+          pour le web et les réseaux sociaux.
         </p>
-        <p class="tech">React Native • Node.js • MySQL</p>
-        <div class="projet-links">
-          <a href="#" class="demo">Demo</a>
-          <a href="#" class="github">GitHub</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="carte-projet fade-item" data-category="mobile">
-      <img src="images/sangoapp.jpeg" alt="SangoApp">
-      <div class="projet-content">
-        <h3>SangoApp</h3>
         <p>
-          Application mobile pour la gestion des demandes
-          de poches de sang en cas d'urgence.
+          Objectif : devenir un
+          <strong>développeur full-stack polyvalent</strong>
+          capable d’allier technique, design et créativité.
         </p>
-        <p class="tech">React • Node.js • MongoDB</p>
-        <div class="projet-links">
-          <a href="#" class="demo">Demo</a>
-          <a href="#" class="github">GitHub</a>
+      </section>
+
+      <section id="projets" class="fade-section">
+        <h2>Mes projets</h2>
+
+        <div class="projet-filters">
+          <button class="filter-btn active" data-filter="all">Tous</button>
+          <button class="filter-btn" data-filter="web">Web</button>
+          <button class="filter-btn" data-filter="mobile">Mobile</button>
+          <button class="filter-btn" data-filter="design">Design</button>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section id="competences" class="fade-section">
-  <h2>Compétences</h2>
+        <div class="projet-grid">
+          <article class="carte-projet fade-item" data-category="web">
+            <img src="images/immob.PNG" alt="Projet de gestion immobilière" />
+            <div class="projet-content">
+              <h3>Gestion immobilière</h3>
+              <p>
+                Application web permettant la gestion des biens, des clients et
+                des transactions.
+              </p>
+              <p class="tech">
+                HTML • CSS • JavaScript • PHP • MySQL
+              </p>
+              <div class="projet-links">
+                <a
+                  href="https://faissal.epizy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="demo"
+                >
+                  Demo
+                </a>
+                <a href="#" class="github">GitHub</a>
+              </div>
+            </div>
+          </article>
 
-  <h3>Développement</h3>
-  <div class="competence-grid">
-    <div class="competence"><img src="images/html.jpg"><span class="counter" data-target="95">0%</span><p>HTML5</p></div>
-    <div class="competence"><img src="images/css.jpg"><span class="counter" data-target="90">0%</span><p>CSS3</p></div>
-    <div class="competence"><img src="images/javascript.jpg"><span class="counter" data-target="85">0%</span><p>JavaScript</p></div>
-    <div class="competence"><img src="images/php.jpg"><span class="counter" data-target="75">0%</span><p>PHP</p></div>
-    <div class="competence"><img src="images/MySql.jpg"><span class="counter" data-target="80">0%</span><p>MySQL</p></div>
-    <div class="competence"><img src="images/github.jpg"><span class="counter" data-target="85">0%</span><p>Git/GitHub</p></div>
-    <div class="competence"><img src="images/react.jpg"><span class="counter" data-target="70">0%</span><p>React</p></div>
-    <div class="competence"><img src="images/node.jpg"><span class="counter" data-target="65">0%</span><p>Node.js</p></div>
-    <div class="competence"><img src="images/python.jpg"><span class="counter" data-target="60">0%</span><p>Python</p></div>
-    <div class="competence"><img src="images/tailwind.jpg"><span class="counter" data-target="75">0%</span><p>Tailwind</p></div>
-  </div>
+          <article class="carte-projet fade-item" data-category="web">
+            <img src="images/newdawn.PNG" alt="Gestion d'association" />
+            <div class="projet-content">
+              <h3>Gestion d'association</h3>
+              <p>
+                Plateforme de gestion des membres, cotisations et événements.
+              </p>
+              <p class="tech">PHP • MySQL • Bootstrap</p>
+              <div class="projet-links">
+                <a
+                  href="https://faissal2.epizy.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="demo"
+                >
+                  Demo
+                </a>
+                <a href="#" class="github">GitHub</a>
+              </div>
+            </div>
+          </article>
 
-  <h3>Infographie & Montage vidéo</h3>
-  <div class="competence-grid">
-    <div class="competence"><img src="images/photoshop.jfif"><span class="counter" data-target="85">0%</span><p>Photoshop</p></div>
-    <div class="competence"><img src="images/illustrator.png"><span class="counter" data-target="80">0%</span><p>Illustrator</p></div>
-    <div class="competence"><img src="images/premiere.jfif"><span class="counter" data-target="80">0%</span><p>Premiere Pro</p></div>
-    <div class="competence"><img src="images/aftereffect.png"><span class="counter" data-target="75">0%</span><p>After Effects</p></div>
-    <div class="competence"><img src="images/figma.png"><span class="counter" data-target="80">0%</span><p>Figma</p></div>
-    <div class="competence"><img src="images/canva.jfif"><span class="counter" data-target="85">0%</span><p>Canva</p></div>
-    <div class="competence"><img src="images/indesign.jfif"><span class="counter" data-target="70">0%</span><p>InDesign</p></div>
-    <div class="competence"><img src="images/capcut.jfif"><span class="counter" data-target="75">0%</span><p>Capcut</p></div>
-  </div>
-</section>
+          <article class="carte-projet fade-item" data-category="web">
+            <img
+              src="images/projet-portfolio.jpg"
+              alt="Portfolio personnel"
+            />
+            <div class="projet-content">
+              <h3>Portfolio personnel</h3>
+              <p>
+                Site portfolio pour présenter mes compétences et projets.
+              </p>
+              <p class="tech">HTML • CSS • JavaScript</p>
+              <div class="projet-links">
+                <a
+                  href="index.html"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="demo"
+                >
+                  Demo
+                </a>
+                <a href="#" class="github">GitHub</a>
+              </div>
+            </div>
+          </article>
 
-<section id="cv" class="fade-section">
-  <h2>Mon CV</h2>
-  <a href="images/cv.pdf" download class="btn-primary">
-    Télécharger mon CV
-  </a>
-</section>
+          <article class="carte-projet fade-item" data-category="mobile">
+            <img src="images/serviceapp.jpeg" alt="Application Services App" />
+            <div class="projet-content">
+              <h3>Services App</h3>
+              <p>
+                Application de services à la demande (mise en relation,
+                paiement, immobilier).
+              </p>
+              <p class="tech">React Native • Node.js • MySQL</p>
+              <div class="projet-links">
+                <a href="#" class="demo">Demo</a>
+                <a href="#" class="github">GitHub</a>
+              </div>
+            </div>
+          </article>
 
-<section id="contact" class="fade-section">
-  <h2>Contact</h2>
-  <form>
-    <input type="text" placeholder="Votre nom" required>
-    <input type="email" placeholder="Votre email" required>
-    <textarea placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer</button>
-  </form>
-</section>
+          <article class="carte-projet fade-item" data-category="mobile">
+            <img src="images/sangoapp.jpeg" alt="Application SangoApp" />
+            <div class="projet-content">
+              <h3>SangoApp</h3>
+              <p>
+                Application mobile pour la gestion des demandes de poches de
+                sang en cas d'urgence.
+              </p>
+              <p class="tech">React • Node.js • MongoDB</p>
+              <div class="projet-links">
+                <a href="#" class="demo">Demo</a>
+                <a href="#" class="github">GitHub</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
 
-<footer>
-  <p>© 2025 DERME Faissal – Développeur Web & Créatif Digital</p>
-</footer>
-<script src="script.js"></script>
-</body>
+      <section id="competences" class="fade-section">
+        <h2>Compétences</h2>
+
+        <h3>Développement</h3>
+        <div class="competence-grid">
+          <div class="competence">
+            <img src="images/html.jpg" alt="HTML5" />
+            <span class="counter" data-target="95">0%</span>
+            <p>HTML5</p>
+          </div>
+          <div class="competence">
+            <img src="images/css.jpg" alt="CSS3" />
+            <span class="counter" data-target="90">0%</span>
+            <p>CSS3</p>
+          </div>
+          <div class="competence">
+            <img src="images/javascript.jpg" alt="JavaScript" />
+            <span class="counter" data-target="85">0%</span>
+            <p>JavaScript</p>
+          </div>
+          <div class="competence">
+            <img src="images/php.jpg" alt="PHP" />
+            <span class="counter" data-target="75">0%</span>
+            <p>PHP</p>
+          </div>
+          <div class="competence">
+            <img src="images/MySql.jpg" alt="MySQL" />
+            <span class="counter" data-target="80">0%</span>
+            <p>MySQL</p>
+          </div>
+          <div class="competence">
+            <img src="images/github.jpg" alt="Git et GitHub" />
+            <span class="counter" data-target="85">0%</span>
+            <p>Git/GitHub</p>
+          </div>
+          <div class="competence">
+            <img src="images/react.jpg" alt="React" />
+            <span class="counter" data-target="70">0%</span>
+            <p>React</p>
+          </div>
+          <div class="competence">
+            <img src="images/node.jpg" alt="Node.js" />
+            <span class="counter" data-target="65">0%</span>
+            <p>Node.js</p>
+          </div>
+          <div class="competence">
+            <img src="images/python.jpg" alt="Python" />
+            <span class="counter" data-target="60">0%</span>
+            <p>Python</p>
+          </div>
+          <div class="competence">
+            <img src="images/tailwind.jpg" alt="Tailwind CSS" />
+            <span class="counter" data-target="75">0%</span>
+            <p>Tailwind</p>
+          </div>
+        </div>
+
+        <h3>Infographie & Montage vidéo</h3>
+        <div class="competence-grid">
+          <div class="competence">
+            <img src="images/photoshop.jfif" alt="Photoshop" />
+            <span class="counter" data-target="85">0%</span>
+            <p>Photoshop</p>
+          </div>
+          <div class="competence">
+            <img src="images/illustrator.png" alt="Illustrator" />
+            <span class="counter" data-target="80">0%</span>
+            <p>Illustrator</p>
+          </div>
+          <div class="competence">
+            <img src="images/premiere.jfif" alt="Premiere Pro" />
+            <span class="counter" data-target="80">0%</span>
+            <p>Premiere Pro</p>
+          </div>
+          <div class="competence">
+            <img src="images/aftereffect.png" alt="After Effects" />
+            <span class="counter" data-target="75">0%</span>
+            <p>After Effects</p>
+          </div>
+          <div class="competence">
+            <img src="images/figma.png" alt="Figma" />
+            <span class="counter" data-target="80">0%</span>
+            <p>Figma</p>
+          </div>
+          <div class="competence">
+            <img src="images/canva.jfif" alt="Canva" />
+            <span class="counter" data-target="85">0%</span>
+            <p>Canva</p>
+          </div>
+          <div class="competence">
+            <img src="images/indesign.jfif" alt="InDesign" />
+            <span class="counter" data-target="70">0%</span>
+            <p>InDesign</p>
+          </div>
+          <div class="competence">
+            <img src="images/capcut.jfif" alt="Capcut" />
+            <span class="counter" data-target="75">0%</span>
+            <p>Capcut</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="cv" class="fade-section">
+        <h2>Mon CV</h2>
+        <a href="images/cv.pdf" download class="btn-primary">
+          Télécharger mon CV
+        </a>
+      </section>
+
+      <section id="contact" class="fade-section">
+        <h2>Contact</h2>
+        <form>
+          <input type="text" placeholder="Votre nom" required />
+          <input type="email" placeholder="Votre email" required />
+          <textarea placeholder="Votre message" required></textarea>
+          <button type="submit">Envoyer</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 DERME Faissal – Développeur Web & Créatif Digital</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
 </html>
