@@ -565,3 +565,17 @@ footer {
     padding: 24px 16px;
   }
 }
+html,
+body {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Debug temporaire : encadrer les éléments trop larges */
+img,
+section,
+.projet-grid,
+.competence-grid,
+.navbar {
+  max-width: 100%;
+}
