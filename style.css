@@ -1,6 +1,4 @@
-/* ===================================================
-   VARIABLES GLOBALES — IDENTITÉ + GLASSMORPHISM
-=================================================== */
+
 :root {
   --primary: #4a148c;
   --primary-light: #7b1fa2;
@@ -8,37 +6,32 @@
 
   --text-main: #2e2e2e;
   --text-soft: #666;
-  --bg-light: linear-gradient(135deg, #ede7f6, #f6f3fb, #ede7f6);
-  --bg-dark: #1a1a1a;
 
-  /* Glass */
+  --bg-light: linear-gradient(135deg, #ede7f6, #f6f3fb);
+  --bg-dark: #121212;
+
   --glass-bg: rgba(255, 255, 255, 0.18);
   --glass-border: rgba(255, 255, 255, 0.35);
   --glass-shadow: 0 10px 35px rgba(31, 38, 135, 0.25);
-  --glass-blur: blur(16px);
+  --glass-blur: blur(14px);
 
   --radius: 18px;
   --transition: all 0.35s ease;
 }
 
-/* ===================================================
-   RESET & BASE
-=================================================== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   font-family: "Segoe UI", sans-serif;
   background: var(--bg-light);
   color: var(--text-main);
-  line-height: 1.75;
+  line-height: 1.7;
   padding-top: 70px;
   overflow-x: hidden;
   transition: background 0.4s, color 0.4s;
@@ -49,17 +42,12 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
-/* ===================================================
-   NAVBAR — GLASS
-=================================================== */
 .navbar {
   position: fixed;
   top: 0;
   width: 100%;
   background: rgba(74, 20, 140, 0.55);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(16px);
   z-index: 1000;
 }
 
@@ -74,8 +62,8 @@ body.dark-mode {
 
 .nav-logo {
   color: white;
-  font-weight: 800;
   font-size: 1.5em;
+  font-weight: 800;
 }
 
 .nav-links {
@@ -85,81 +73,59 @@ body.dark-mode {
   align-items: center;
 }
 
-.nav-links li button {
-  border: none;
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.nav-links button {
   background: none;
+  border: none;
   color: white;
   font-size: 1.2em;
   cursor: pointer;
 }
 
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  position: relative;
-  transition: var(--transition);
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  width: 0;
-  height: 2px;
-  background: var(--primary-soft);
-  transition: width 0.3s;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-}
-
 .menu-toggle {
   display: none;
-  color: white;
   font-size: 1.8em;
+  color: white;
   cursor: pointer;
 }
 
-/* ===================================================
-   HERO / ACCUEIL
-=================================================== */
 #accueil {
   background: linear-gradient(135deg, var(--primary), #6a1b9a);
   color: white;
-  padding: 100px 20px 170px;
+  padding: 100px 20px 160px;
   text-align: center;
   position: relative;
 }
 
 .accueil-container h1 {
-  font-size: 2.9em;
+  font-size: 2.8em;
   font-weight: 900;
 }
 
 .subtitle {
-  margin-top: 14px;
-  font-size: 1.25em;
+  margin-top: 12px;
+  font-size: 1.2em;
   color: #e0d6f0;
 }
 
 .hero-buttons {
-  margin-top: 40px;
+  margin-top: 35px;
   display: flex;
   justify-content: center;
   gap: 20px;
 }
 
 .btn-primary,
-.btn-secondary,
-button {
+.btn-secondary {
   padding: 14px 34px;
   border-radius: 30px;
   font-weight: 700;
   text-decoration: none;
-  cursor: pointer;
   transition: var(--transition);
 }
 
@@ -168,19 +134,9 @@ button {
   color: var(--primary);
 }
 
-.btn-primary:hover {
-  background: var(--primary-soft);
-  color: white;
-}
-
 .btn-secondary {
   border: 2px solid white;
   color: white;
-}
-
-.btn-secondary:hover {
-  background: white;
-  color: var(--primary);
 }
 
 /* Photo */
@@ -189,6 +145,7 @@ button {
   bottom: -85px;
   left: 50%;
   transform: translateX(-50%);
+  z-index: 10;
 }
 
 .photo-profil {
@@ -197,12 +154,9 @@ button {
   border-radius: 50%;
   border: 6px solid white;
   object-fit: cover;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
 }
 
-/* ===================================================
-   SECTIONS — CONTENEUR GLASS
-=================================================== */
 section {
   max-width: 1150px;
   margin: auto;
@@ -214,8 +168,7 @@ section::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
+  background: rgba(255,255,255,0.05);
   z-index: -1;
   border-radius: 30px;
 }
@@ -223,26 +176,23 @@ section::before {
 section h2 {
   text-align: center;
   font-size: 2.3em;
-  margin-bottom: 35px;
   color: var(--primary);
+  margin-bottom: 35px;
 }
 
 section h3 {
   text-align: center;
-  margin: 45px 0 25px;
   color: var(--primary-light);
+  margin: 45px 0 25px;
 }
 
 section p {
   max-width: 820px;
-  margin: 0 auto 20px;
+  margin: auto;
   text-align: center;
   color: var(--text-soft);
 }
 
-/* ===================================================
-   PROJETS — GLASS CARDS & HOVER 3D
-=================================================== */
 .projet-filters {
   display: flex;
   justify-content: center;
@@ -255,14 +205,10 @@ section p {
   border-radius: 25px;
   border: 1px solid var(--primary-light);
   background: rgba(255,255,255,0.15);
-  color: var(--primary-light);
-  font-weight: 600;
   cursor: pointer;
-  transition: var(--transition);
 }
 
-.filter-btn.active,
-.filter-btn:hover {
+.filter-btn.active {
   background: var(--primary-light);
   color: white;
 }
@@ -271,25 +217,20 @@ section p {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 40px;
-  max-width: 1050px;
-  margin: auto;
-  perspective: 1200px;
 }
 
 .carte-projet {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
   border-radius: var(--radius);
   border: 1px solid var(--glass-border);
   box-shadow: var(--glass-shadow);
   overflow: hidden;
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .carte-projet:hover {
-  transform: rotateY(8deg) rotateX(5deg) translateY(-12px);
-  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.28);
+  transform: translateY(-10px);
 }
 
 .carte-projet img {
@@ -298,198 +239,118 @@ section p {
   object-fit: cover;
 }
 
-.projet-content {
-  padding: 26px;
-  text-align: center;
-}
-
-.tech {
-  margin: 16px 0;
-  font-weight: 700;
-  color: var(--primary-light);
-}
-
-.projet-links {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-  gap: 18px;
-}
-
-.projet-links a {
-  padding: 8px 22px;
-  border-radius: 22px;
-  font-size: 0.85em;
-  font-weight: 700;
-  text-decoration: none;
-}
-
-.demo {
-  background: var(--primary-light);
-  color: white;
-}
-
-.github {
-  border: 2px solid var(--primary-light);
-  color: var(--primary-light);
-}
-
-/* --- Variables, reset, navbar, hero, sections, projets ... comme avant --- */
-
-/* COMPÉTENCES */
 .competence-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 35px;
   max-width: 700px;
   margin: auto;
-  perspective: 800px;
-  transform-style: preserve-3d;
 }
 
 .competence {
   background: var(--glass-bg);
   backdrop-filter: var(--glass-blur);
-  -webkit-backdrop-filter: var(--glass-blur);
-  border: 1px solid var(--glass-border);
   border-radius: var(--radius);
   padding: 26px;
   text-align: center;
   box-shadow: var(--glass-shadow);
-  transition: transform 0.5s ease, box-shadow 0.5s ease;
+  transition: transform 0.5s ease;
 }
 
 .competence:hover {
-  transform: rotateY(6deg) rotateX(4deg) translateY(-10px);
+  transform: translateY(-8px);
 }
 
 .competence img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
   object-fit: contain;
-  display: block;
-  margin: 0 auto 14px auto;
-  z-index: 1;
+  margin-bottom: 10px;
 }
 
-.competence span {
+.counter {
   font-weight: 700;
-  display: block;
-  font-size: 1.2em;
+  font-size: 1.1em;
 }
 
-.competence p {
-  margin-top: 6px;
-  font-weight: 600;
+@media (max-width: 768px) {
+
+  .menu-toggle { display: block; }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: rgba(74,20,140,0.9);
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 220px;
+    padding: 20px;
+  }
+
+  .nav-links.active { display: flex; }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .projet-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competence-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .competence {
+    background: none;
+    box-shadow: none;
+    padding: 8px 0;
+  }
+
+  .competence img,
+  .counter {
+    display: none;
+  }
+
+  .competence p {
+    font-weight: 700;
+    margin-bottom: 6px;
+  }
+
+  .competence::after {
+    content: "";
+    display: block;
+    height: 10px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 20px;
+  }
+
+  .competence::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 10px;
+    width: 0;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light));
+    border-radius: 20px;
+    transition: width 1.2s ease-out;
+  }
+
+  .competence.animate::before {
+    width: var(--level);
+  }
 }
 
-/* Dark mode pour cartes, compétences et form */
-body.dark-mode .competence,
-body.dark-mode .carte-projet,
-body.dark-mode form {
-  background: rgba(30,30,30,0.2);
-  border-color: rgba(255,255,255,0.15);
-}
-/* ===================================================
-   FORMULAIRE — GLASS
-=================================================== */
-form {
-  max-width: 540px;
-  margin: auto;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-radius: var(--radius);
-  padding: 40px;
-  border: 1px solid var(--glass-border);
-  box-shadow: var(--glass-shadow);
-  display: flex;
-  flex-direction: column;
-  gap: 18px;
-}
-
-input,
-textarea {
-  padding: 14px;
-  border-radius: 10px;
-  border: 1px solid #bbb;
-  font-size: 1em;
-  transition: var(--transition);
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  border-color: var(--primary-light);
-  box-shadow: 0 0 8px rgba(123, 31, 162, 0.35);
-}
-
-/* ===================================================
-   FOOTER
-=================================================== */
-footer {
-  background: rgba(74, 20, 140, 0.65);
-  backdrop-filter: blur(14px);
-  color: white;
-  text-align: center;
-  padding: 26px;
-  font-size: 0.9em;
-}
-
-/* ===================================================
-   ANIMATIONS & FADE-IN
-=================================================== */
 .fade-section,
 .fade-item {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.9s ease;
+  transform: translateY(25px);
+  transition: all 0.8s ease;
 }
 
 .fade-section.visible,
 .fade-item.visible {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* ===================================================
-   RESPONSIVE
-=================================================== */
-@media (max-width: 992px) {
-  .projet-grid,
-  .competence-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background: rgba(74, 20, 140, 0.85);
-    position: absolute;
-    top: 70px;
-    right: 0;
-    width: 220px;
-    padding: 20px;
-    border-radius: 0 0 0 20px;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .hero-buttons {
-    flex-direction: column;
-    gap: 15px;
-  }
-
-  .projet-filters {
-    flex-direction: column;
-    gap: 10px;
-  }
 }
