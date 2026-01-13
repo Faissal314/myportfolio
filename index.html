@@ -2,24 +2,39 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
-  <title>DERME Faissal | Portfolio</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- SEO Meta Tags -->
+  <title>DERME Faissal | Développeur Web Full-Stack & Designer</title>
+  <meta name="description" content="Portfolio de DERME Faissal - Développeur Web Junior, Infographe et Monteur Vidéo. Découvrez mes projets en développement web, design et création numérique." />
+  <meta name="keywords" content="développeur web, portfolio, infographie, montage vidéo, React, PHP, JavaScript, design" />
+  <meta name="author" content="DERME Faissal" />
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="DERME Faissal | Développeur Web & Designer" />
+  <meta property="og:description" content="Portfolio professionnel - Développement Web, Infographie et Création Numérique" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="images/profil.jpg" />
+  
+  <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
 
-<nav class="navbar">
+<nav class="navbar" role="navigation" aria-label="Navigation principale">
   <div class="nav-container">
     <div class="nav-logo">Faissal.dev</div>
-    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#accueil">Accueil</a></li>
-      <li><a href="#apropos">À propos</a></li>
-      <li><a href="#projets">Projets</a></li>
-      <li><a href="#competences">Compétences</a></li>
-      <li><a href="#cv">CV</a></li>
-      <li><a href="#contact">Contact</a></li>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu de navigation" aria-expanded="false">
+      &#9776;
+    </button>
+    <ul class="nav-links" id="nav-links" role="menubar">
+      <li role="none"><a href="#accueil" role="menuitem">Accueil</a></li>
+      <li role="none"><a href="#apropos" role="menuitem">À propos</a></li>
+      <li role="none"><a href="#projets" role="menuitem">Projets</a></li>
+      <li role="none"><a href="#competences" role="menuitem">Compétences</a></li>
+      <li role="none"><a href="#cv" role="menuitem">CV</a></li>
+      <li role="none"><a href="#contact" role="menuitem">Contact</a></li>
     </ul>
   </div>
 </nav>
@@ -196,19 +211,23 @@
 
 <section id="cv" class="fade-section">
   <h2>Mon CV</h2>
-  <a href="images/cv.pdf" download class="btn-primary">
-    Télécharger mon CV
-  </a>
+  <p>Téléchargez mon CV pour découvrir mon parcours complet et mes expériences professionnelles.</p>
+  <div style="text-align: center; margin-top: 2rem;">
+    <a href="images/cv.pdf" download class="btn-primary" aria-label="Télécharger le CV de DERME Faissal">
+      📄 Télécharger mon CV
+    </a>
+  </div>
 </section>
 
 
 <section id="contact" class="fade-section">
   <h2>Contact</h2>
-  <form>
-    <input type="text" placeholder="Votre nom" required>
-    <input type="email" placeholder="Votre email" required>
-    <textarea placeholder="Votre message" required></textarea>
-    <button type="submit">Envoyer</button>
+  <p>Une question ? Un projet ? N'hésitez pas à me contacter !</p>
+  <form id="contact-form" aria-label="Formulaire de contact">
+    <input type="text" id="name" name="name" placeholder="Votre nom" required aria-label="Votre nom">
+    <input type="email" id="email" name="email" placeholder="Votre email" required aria-label="Votre adresse email">
+    <textarea id="message" name="message" placeholder="Votre message" required aria-label="Votre message"></textarea>
+    <button type="submit">✉️ Envoyer le message</button>
   </form>
 </section>
 
