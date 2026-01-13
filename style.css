@@ -1,55 +1,44 @@
-/* ===================================
-   GOOGLE FONTS IMPORT
-   =================================== */
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
-/* ===================================
-   DESIGN SYSTEM - VARIABLES CSS
-   =================================== */
+
 :root {
-  /* Palette de couleurs moderne - Thème sombre élégant */
+  
   --primary: hsl(250, 70%, 55%);
   --primary-light: hsl(260, 75%, 65%);
   --primary-dark: hsl(245, 65%, 45%);
   --accent: hsl(320, 85%, 60%);
   --accent-light: hsl(320, 80%, 70%);
 
-  /* Backgrounds */
   --bg-main: hsl(240, 15%, 8%);
   --bg-secondary: hsl(240, 12%, 12%);
   --bg-card: hsl(240, 10%, 15%);
   --bg-elevated: hsl(240, 12%, 18%);
 
-  /* Texte */
   --text-primary: hsl(0, 0%, 95%);
   --text-secondary: hsl(0, 0%, 70%);
   --text-muted: hsl(0, 0%, 50%);
 
-  /* Gradients */
   --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
   --gradient-secondary: linear-gradient(135deg, hsl(250, 70%, 55%) 0%, hsl(280, 70%, 60%) 50%, hsl(320, 85%, 60%) 100%);
   --gradient-card: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
 
-  /* Ombres */
   --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
   --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.4);
   --shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.5);
   --shadow-xl: 0 16px 48px rgba(0, 0, 0, 0.6);
   --shadow-glow: 0 0 20px rgba(123, 97, 255, 0.4);
 
-  /* Bordures */
   --border-radius-sm: 8px;
   --border-radius-md: 12px;
   --border-radius-lg: 16px;
   --border-radius-xl: 24px;
   --border-radius-full: 9999px;
 
-  /* Transitions */
   --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-normal: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 
-  /* Espacements */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
@@ -58,9 +47,6 @@
   --spacing-2xl: 4rem;
 }
 
-/* ===================================
-   RESET & BASE
-   =================================== */
 * {
   margin: 0;
   padding: 0;
@@ -88,9 +74,6 @@ body {
   color: white;
 }
 
-/* ===================================
-   NAVIGATION
-   =================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -186,9 +169,6 @@ body {
   width: 100%;
 }
 
-/* ===================================
-   HERO SECTION
-   =================================== */
 #accueil {
   background: var(--bg-main);
   position: relative;
@@ -256,9 +236,6 @@ body {
   margin-top: 2.5rem;
 }
 
-/* ===================================
-   BUTTONS
-   =================================== */
 .btn-primary,
 .btn-secondary,
 button[type="submit"] {
@@ -327,9 +304,6 @@ button[type="submit"]:hover {
   box-shadow: var(--shadow-lg), var(--shadow-glow);
 }
 
-/* ===================================
-   PHOTO PROFIL
-   =================================== */
 .photo-wrapper {
   position: absolute;
   bottom: -90px;
@@ -353,16 +327,13 @@ button[type="submit"]:hover {
   box-shadow: var(--shadow-xl), 0 0 60px rgba(123, 97, 255, 0.5);
 }
 
-/* ===================================
-   SECTIONS
-   =================================== */
+
 section {
   max-width: 1200px;
   margin: 0 auto;
   padding: 6rem 2rem;
 }
 
-/* Première section après le hero - espace pour la photo */
 #apropos {
   padding-top: 14rem;
 }
@@ -396,9 +367,6 @@ section h3 {
   font-weight: 700;
 }
 
-/* ===================================
-   PROJETS
-   =================================== */
 .projet-filters {
   display: flex;
   justify-content: center;
@@ -549,9 +517,6 @@ section h3 {
   transform: translateY(-2px);
 }
 
-/* ===================================
-   COMPETENCES
-   =================================== */
 .competence-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -597,9 +562,6 @@ section h3 {
   color: var(--text-primary);
 }
 
-/* ===================================
-   FORMULAIRE CONTACT
-   =================================== */
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -638,9 +600,6 @@ textarea {
   resize: vertical;
 }
 
-/* ===================================
-   FOOTER
-   =================================== */
 footer {
   background: var(--bg-secondary);
   color: var(--text-secondary);
@@ -654,9 +613,6 @@ footer p {
   margin: 0;
 }
 
-/* ===================================
-   ANIMATIONS
-   =================================== */
 .fade-section,
 .fade-item {
   opacity: 0;
@@ -671,11 +627,6 @@ footer p {
   transform: translateY(0);
 }
 
-/* ===================================
-   RESPONSIVE DESIGN
-   =================================== */
-
-/* Tablettes */
 @media (max-width: 1024px) {
   .nav-container {
     padding: 1rem 1.5rem;
@@ -695,7 +646,7 @@ footer p {
   }
 }
 
-/* Mobile */
+
 @media (max-width: 768px) {
   body {
     padding-top: 70px;
@@ -794,7 +745,6 @@ footer p {
   }
 }
 
-/* Petits mobiles */
 @media (max-width: 480px) {
   .nav-logo {
     font-size: 1.25rem;
